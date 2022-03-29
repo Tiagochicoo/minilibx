@@ -6,7 +6,7 @@
 /*   By: tpereira <tpereira@42Lisboa.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 16:25:21 by tpereira          #+#    #+#             */
-/*   Updated: 2021/09/17 18:50:17 by tpereira         ###   ########.fr       */
+/*   Updated: 2022/03/29 20:38:09 by tpereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ void	fill_matrix(int *z_line, char *line)
 	nums = ft_split(line, ' ');
 	while(nums[i])
 	{
+		sleep(2);
 		z_line[i] = ft_atoi(nums[i]);
 		i++;
 		free(nums[i]);
