@@ -6,19 +6,19 @@
 #    By: tpereira <tpereira@42Lisboa.com>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/11 10:19:16 by tpereira          #+#    #+#              #
-#    Updated: 2022/03/29 20:30:41 by tpereira         ###   ########.fr        #
+#    Updated: 2022/03/30 20:15:58 by tpereira         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 FDF 		= fdf
 CC 			= gcc
-CFLAGS 		= -Wall -Wextra -Werror
+CFLAGS 		= -Wall -Wextra -Werror -g
 
 all :
 	@make -s -C libft
 	@make -s -C MinilibX
-	@gcc -g  ./srcs/*.c libft/libft.a MinilibX/libmlx_Linux.a -o $(FDF) -lXext -lX11
+	@gcc $(CFLAGS) ./srcs/*.c libft/libft.a MinilibX/libmlx_Linux.a -o $(FDF) -lXext -lX11
 	@printf "\e[38;5;46m ╔════════════════════════════════════╗\e[0m\n"
 	@printf "\e[38;5;46m█▓▒░	     Compiled Libft	    ░▒▓█ \e[0m\n"
 	@printf "\e[38;5;46m█▓▒░   MinilibX build successfull   ░▒▓█ \e[0m\n"
