@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fdf.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tpereira <tpereira@42Lisboa.com>           +#+  +:+       +#+        */
+/*   By: tpereira <tpereira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 17:27:30 by tpereira          #+#    #+#             */
-/*   Updated: 2022/03/30 22:55:10 by tpereira         ###   ########.fr       */
+/*   Updated: 2022/03/31 18:34:55 by tpereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 int	key_hook(int keycode)
 {
-	if (keycode == 65307)
+	if (keycode == 65307 || keycode == 53)
 	{
 		printf("Closing window, bye!\n");
 		exit(0);
@@ -56,6 +56,8 @@ int	resize_hook(void)
 // 	exit(0);
 // }
 
+
+
 void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 {
 	char	*dst;
@@ -81,10 +83,10 @@ int	main(void)
 	//mlx_hook(mlx.mlx_win, 2, (1L << 1), close(27, &mlx, &mlx_win), &mlx);
 	//sleep(10);
 	//mlx_put_image_to_window(mlx.mlx, mlx.mlx_win, &mlx.img, 1, 1);
-	mlx_string_put(mlx.mlx, mlx.mlx_win, 500, 250, 0xFFABCDEF, "Test");
+	mlx_string_put(mlx.mlx, mlx.mlx_win, 500, 250, 0xFFABCDEF, "Testing");
 	mlx_key_hook(mlx.mlx_win, key_hook, mlx.img);
 	mlx_hook(mlx.mlx_win, 04, 1L<<2,  click_hook, &mlx); // 04 keys+buttons | 02 only keyboard
-	mlx_hook(mlx.mlx_win, 25, 1L<<18,  resize_hook, &mlx.mlx_win);
+	mlx_hook(mlx.mlx_win, 25, 1L<<18,  resize_hook, &mlx);
 	mlx_hook(mlx.mlx_win, 17, 0, exit_hook, &mlx);
 	mlx_loop(mlx.mlx);
 }
