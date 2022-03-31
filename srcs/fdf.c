@@ -6,7 +6,7 @@
 /*   By: tpereira <tpereira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 17:27:30 by tpereira          #+#    #+#             */
-/*   Updated: 2022/03/31 18:34:55 by tpereira         ###   ########.fr       */
+/*   Updated: 2022/03/31 19:07:22 by tpereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ int	main(void)
 	mlx_string_put(mlx.mlx, mlx.mlx_win, 500, 250, 0xFFABCDEF, "Testing");
 	mlx_key_hook(mlx.mlx_win, key_hook, mlx.img);
 	mlx_hook(mlx.mlx_win, 04, 1L<<2,  click_hook, &mlx); // 04 keys+buttons | 02 only keyboard
-	mlx_hook(mlx.mlx_win, 25, 1L<<18,  resize_hook, &mlx);
+	mlx_hook(mlx.mlx_win, 25, 0,  resize_hook, &mlx);
 	mlx_hook(mlx.mlx_win, 17, 0, exit_hook, &mlx);
 	mlx_loop(mlx.mlx);
 }
