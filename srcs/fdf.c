@@ -6,7 +6,7 @@
 /*   By: tpereira <tpereira@42Lisboa.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 17:27:30 by tpereira          #+#    #+#             */
-/*   Updated: 2022/03/29 23:03:58 by tpereira         ###   ########.fr       */
+/*   Updated: 2022/04/09 11:37:45 by tpereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,14 +82,14 @@ int	main(void)
 	x = 200;
 	y = 200;
 	mlx.mlx = mlx_init();
-	mlx.mlx_win = mlx_new_window(mlx.mlx, 1024, 768, "Hello world!");
+	mlx.mlx_win = mlx_new_window(mlx.mlx, 1024, 768, "FDF!");
 	img.img = mlx_new_image(mlx.mlx, 1920, 1080);
 	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length, &img.endian);
 
 	draw_square(&img, x, y, 0x00B2FF);
 	//mlx_hook(mlx.mlx_win, 2, (1L << 1), close(27, &mlx, &mlx_win), &mlx);
 	mlx_put_image_to_window(mlx.mlx, mlx.mlx_win, img.img, 1, 1);
-	mlx_string_put(mlx.mlx, mlx.mlx_win, 250, 250, 0xFFABCDEF, "square 1");
+	mlx_string_put(mlx.mlx, mlx.mlx_win, 250, 250, 0xFFABCDEF, "TEST");
 	mlx_key_hook(mlx.mlx_win, key_hook, &img);
 	mlx_hook(mlx.mlx_win, 04, 1L<<2,  click_hook, &img);
 	mlx_hook(mlx.mlx_win, 17, 0, exit_hook, &img);
