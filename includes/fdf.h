@@ -6,7 +6,7 @@
 /*   By: tpereira <tpereira@42Lisboa.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 16:21:52 by tpereira          #+#    #+#             */
-/*   Updated: 2022/03/29 22:33:53 by tpereira         ###   ########.fr       */
+/*   Updated: 2022/04/09 12:02:44 by tpereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ typedef struct
 	void	*win_ptr;
 }				fdf;
 
-void	read_file(char *filename, fdf *data);
+void	read_file(char *filename, fdf*data);
 void	draw_square(t_data*img, int x, int y, unsigned long color);
 
 #endif
