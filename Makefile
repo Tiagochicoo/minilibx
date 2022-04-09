@@ -6,7 +6,7 @@
 #    By: tpereira <tpereira@42Lisboa.com>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/11 10:19:16 by tpereira          #+#    #+#              #
-#    Updated: 2022/04/09 12:13:23 by tpereira         ###   ########.fr        #
+#    Updated: 2022/04/09 12:52:00 by tpereira         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,12 +28,12 @@ ifeq ($(OS),Darwin)
 	@$(CC) $(CFLAGS) $(SRCS) $(LIB) $(MAC) -o $(FDF)
 endif
 ifeq ($(OS),Linux)
-	@make -s -C MinilibX
-	@$(CC) $(SRCS) $(LIB) MinilibX/libmlx_Linux.a $(LINUX) -o $(FDF) 
+	@make -s -C minilibx_linux
+	@$(CC) $(SRCS) $(LIB) minilibx_linux/libmlx_Linux.a $(LINUX) -o $(FDF) 
 endif
 	@printf "\e[38;5;46m ╔════════════════════════════════════╗\e[0m\n"
 	@printf "\e[38;5;46m█▓▒░	     Compiled Libft	    ░▒▓█ \e[0m\n"
-	@printf "\e[38;5;46m█▓▒░   MinilibX build successfull   ░▒▓█ \e[0m\n"
+	@printf "\e[38;5;46m█▓▒░     $(OS) build successfull   ░▒▓█ \e[0m\n"
 	@printf "\e[38;5;46m ╚════════════════════════════════════╝\e[0m\n"
 
 cc: all
@@ -41,7 +41,7 @@ cc: all
 
 clean :
 	@make -s clean -C libft
-	@make -s clean -C MinilibX
+	@make -s clean -C minilibx_linux
 	@rm -rf ./srcs/*.o
 	@printf "\e[31;5;200m ╔════════════════════════════════════╗\e[0m\n"
 	@printf "\e[31;5;200m░▒▓█         Clean complete  	    █▓▒░\e[0m\n"
@@ -49,7 +49,7 @@ clean :
 
 fclean : clean
 	@make -s fclean -C libft
-	@make -s clean -C MinilibX
+	@make -s clean -C minilibx_linux
 	@rm -rf $(FDF)
 
 re :	fclean all
