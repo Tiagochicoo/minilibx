@@ -6,7 +6,7 @@
 /*   By: tpereira <tpereira@42Lisboa.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 17:27:30 by tpereira          #+#    #+#             */
-/*   Updated: 2022/04/09 12:14:50 by tpereira         ###   ########.fr       */
+/*   Updated: 2022/04/09 12:10:20 by tpereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,15 +49,15 @@ int		exit_hook(t_data *vars)
 	return (0);
 }
 
-int	deal_key(int key, void *data)
+void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 {
-	if (data)
-		ft_printf("\n");
-	ft_printf("%d", key);
-	return (0);
+	char	*dst;
+
+	dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
+	*(unsigned int*)dst = color;
 }
 
-int	main(int argc, char **argv)
+int	main(void)
 {
 	t_data	mlx;
 	t_data	mlx_win;
