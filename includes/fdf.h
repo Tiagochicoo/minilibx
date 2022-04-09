@@ -6,7 +6,7 @@
 /*   By: tpereira <tpereira@42Lisboa.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 16:21:52 by tpereira          #+#    #+#             */
-/*   Updated: 2022/04/09 12:07:54 by tpereira         ###   ########.fr       */
+/*   Updated: 2022/04/09 15:59:54 by tpereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,9 @@ typedef struct	s_data {
 
 typedef struct 
 {
-	int	width;
-	int	height;
-	int	**z_matrix;
-
+	int		width;
+	int		height;
+	int		**z_matrix;
 	void	*mlx_ptr;
 	void	*win_ptr;
 }				fdf;

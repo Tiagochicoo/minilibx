@@ -6,7 +6,7 @@
 /*   By: tpereira <tpereira@42Lisboa.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 16:25:21 by tpereira          #+#    #+#             */
-/*   Updated: 2022/04/09 15:37:46 by tpereira         ###   ########.fr       */
+/*   Updated: 2022/04/09 16:03:47 by tpereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,9 @@ int	get_width(char *filename)
 
 	fd = open(filename, O_RDONLY, 0);
 	get_next_line(fd, &line);
-	width = ft_count_words(line, ' ');
+	width = (int)ft_word_count(line, ' ');
 	free(line);
+	line = NULL;
 	close(fd);
 	return (width);
 }
@@ -52,12 +53,9 @@ void	fill_matrix(int *z_line, char *line)
 	nums = ft_split(line, ' ');
 	while(nums[i])
 	{
-		sleep(2);
-		z_line[i] = ft_atoi(nums[i]);
-		free(nums[i]);
+		z_line[i] = atoi(nums[i]);
 		i++;
 	}
-	free(nums);
 }
 
 void	read_file(char *filename, fdf *data)
@@ -69,9 +67,10 @@ void	read_file(char *filename, fdf *data)
 	i = 0;
 	data->height = get_height(filename);
 	data->width = get_width(filename);
-	data->z_matrix = (int**)malloc(sizeof(int*) * (data->height + 1));
+
+	data->z_matrix = (int **)malloc(sizeof(int*) * (data->height + 1));
 	while (i <= data->height)
-		data->z_matrix[i++] = (int*)malloc(sizeof(int) * (data->width + 1));
+		data->z_matrix[i++] = (int *)malloc(sizeof(int) * (data->width + 1));
 	fd = open(filename, O_RDONLY, 0);
 	i = 0;
 	while (get_next_line(fd, &line))

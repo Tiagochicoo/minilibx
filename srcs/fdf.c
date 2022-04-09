@@ -6,13 +6,12 @@
 /*   By: tpereira <tpereira@42Lisboa.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 17:27:30 by tpereira          #+#    #+#             */
-/*   Updated: 2022/04/09 15:56:28 by tpereira         ###   ########.fr       */
+/*   Updated: 2022/04/09 16:03:22 by tpereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf.h"
 #include <mlx.h>
-#include <stdio.h>
 
 int	key_hook(int keycode, t_data *vars)
 {
@@ -59,28 +58,23 @@ void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 
 int	main(int argc, char**argv)
 {
-	fdf		*data;
-	int		i;
-	int		j;
+	int	i;
+	int	j;
+	fdf *data;
 
-	ft_printf("test\n");
 	i = 0;
 	data = (fdf*)malloc(sizeof(fdf));
-	if (argc > 1)
-	{	
-		read_file(argv[1], data);
-		i = 0;
-		while (i < data->height)
+	read_file(argv[1], data);
+	while (i < data->height)
+	{
+		j = 0;
+		while (j < data->width)
 		{
-			j = 0;
-			while (j < data->width)
-			{
-				ft_printf("%3d", data->z_matrix[i][j]);
-				j++;
-			}
-			ft_printf("\n");
-			i++;
+			printf("%3d ", data->z_matrix[i][j]);
+			j++;
 		}
+		printf("\n");
+		i++;
 	}
 }
 
