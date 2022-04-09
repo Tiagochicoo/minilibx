@@ -6,7 +6,7 @@
 /*   By: tpereira <tpereira@42Lisboa.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 16:25:21 by tpereira          #+#    #+#             */
-/*   Updated: 2022/04/09 12:02:40 by tpereira         ###   ########.fr       */
+/*   Updated: 2022/04/09 15:37:46 by tpereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	get_height(char *filename)
 	while(get_next_line(fd, &line))
 	{
 		height++;
-		//free(line);
+		free(line);
 	}
 	close(fd);
 	return (height);
@@ -54,8 +54,8 @@ void	fill_matrix(int *z_line, char *line)
 	{
 		sleep(2);
 		z_line[i] = ft_atoi(nums[i]);
-		i++;
 		free(nums[i]);
+		i++;
 	}
 	free(nums);
 }
@@ -69,10 +69,9 @@ void	read_file(char *filename, fdf *data)
 	i = 0;
 	data->height = get_height(filename);
 	data->width = get_width(filename);
-
-	data->z_matrix = (int **)malloc(sizeof(int*) * (data->height + 1));
+	data->z_matrix = (int**)malloc(sizeof(int*) * (data->height + 1));
 	while (i <= data->height)
-		data->z_matrix[i++] = (int *)malloc(sizeof(int) * (data->width + 1));
+		data->z_matrix[i++] = (int*)malloc(sizeof(int) * (data->width + 1));
 	fd = open(filename, O_RDONLY, 0);
 	i = 0;
 	while (get_next_line(fd, &line))

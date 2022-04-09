@@ -1,18 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   square.c                                           :+:      :+:    :+:   */
+/*   draw.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpereira <tpereira@42Lisboa.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 22:26:16 by tpereira          #+#    #+#             */
-/*   Updated: 2022/03/29 22:51:00 by tpereira         ###   ########.fr       */
+/*   Updated: 2022/04/09 15:28:17 by tpereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf.h"
-#include <mlx.h>
-#include <stdio.h>
 
 void	draw_square(t_data*img, int x, int y, unsigned long color)
 {

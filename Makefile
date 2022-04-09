@@ -6,13 +6,13 @@
 #    By: tpereira <tpereira@42Lisboa.com>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/11 10:19:16 by tpereira          #+#    #+#              #
-#    Updated: 2022/04/09 12:52:00 by tpereira         ###   ########.fr        #
+#    Updated: 2022/04/09 15:52:40 by tpereira         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 FDF 		= fdf
-CC 			= gcc
+CC 			= gcc -g
 CFLAGS 		= -Wall -Wextra -Werror -g
 INC			= -Iincludes -Ilibft
 LIB			= libft/libft.a
@@ -33,7 +33,7 @@ ifeq ($(OS),Linux)
 endif
 	@printf "\e[38;5;46m ╔════════════════════════════════════╗\e[0m\n"
 	@printf "\e[38;5;46m█▓▒░	     Compiled Libft	    ░▒▓█ \e[0m\n"
-	@printf "\e[38;5;46m█▓▒░     $(OS) build successfull   ░▒▓█ \e[0m\n"
+	@printf "\e[38;5;46m█▓▒░      $(OS) build successfull   ░▒▓█ \e[0m\n"
 	@printf "\e[38;5;46m ╚════════════════════════════════════╝\e[0m\n"
 
 cc: all
