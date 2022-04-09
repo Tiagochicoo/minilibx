@@ -6,7 +6,7 @@
 /*   By: tpereira <tpereira@42Lisboa.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 17:27:30 by tpereira          #+#    #+#             */
-/*   Updated: 2022/04/09 11:37:45 by tpereira         ###   ########.fr       */
+/*   Updated: 2022/04/09 12:10:20 by tpereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int	key_hook(int keycode, t_data *vars)
 	}
 	else
 		printf("You pressed the %d key!\n", keycode);
+	return (0);
 }
 
 int	click_hook(int keycode, t_data *vars)
@@ -39,27 +40,13 @@ int	click_hook(int keycode, t_data *vars)
 	}
 	else
 		printf("You pressed the %d key!\n", keycode);
+	return (0);
 }
 
 int		exit_hook(t_data *vars)
 {
-	int i;
-
-	if (vars->addr)
-		free(vars->addr);
-	if (vars->bits_per_pixel)
-		free(vars->bits_per_pixel);
-	if (vars->endian)
-		free(vars->endian);
-	if (vars->img)
-		free(vars->img);
-	if (vars->line_length)
-		free(vars->line_length);
-	if (vars->mlx)
-		free(vars->mlx);
-	if (vars->mlx_win)
-		free(vars->mlx_win);
 	exit(0);
+	return (0);
 }
 
 void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
